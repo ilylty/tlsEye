@@ -1,0 +1,42 @@
+[redis]
+cache_url = "redis://127.0.0.1:6379/0"
+result_url = "redis://127.0.0.1:6379/1"
+cache_pool_size = 2000
+result_pool_size = 1000
+cache_ttl_secs = 86400
+
+[dns]
+timeout_secs = 2
+node_timeout_ms = 800
+
+# UDP DNS Servers (e.g., Aliyun, 114, Tencent)
+udp_servers = [
+    "223.5.5.5:53",
+    "114.114.114.114:53",
+    "119.29.29.29:53"
+]
+
+# DoH Servers (DNS over HTTPS)
+[[dns.doh_servers]]
+ip = "223.5.5.5"
+port = 443
+domain = "dns.alidns.com"
+
+[[dns.doh_servers]]
+ip = "119.29.29.29"
+port = 443
+domain = "doh.pub"
+
+[[dns.doh_servers]]
+ip = "1.1.1.1"
+port = 443
+domain = "cloudflare-dns.com"
+
+[tls]
+timeout_secs = 3
+
+[kafka]
+brokers = "127.0.0.1:9092"
+group_id = "tlseye-group"
+topic = "tls_client_hello"
+concurrency_limit = 50000

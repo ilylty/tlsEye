@@ -1,0 +1,25 @@
+[package]
+name = "tlseye"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.37.0", features = ["full"] }
+rdkafka = { version = "0.36.2", features = ["cmake-build"] }
+redis = { version = "0.25.3", features = ["tokio-comp", "connection-manager"] }
+deadpool-redis = "0.15.0"
+hickory-resolver = { version = "0.24.1", features = ["dns-over-https-rustls", "serde"] }
+rustls = { version = "0.23.0", default-features = false, features = ["ring", "std"] }
+rustls-pki-types = "1.0"
+tls-parser = "0.12.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+dashmap = "5.5.3"
+base64 = "0.22.1"
+ring = "0.17.14"
+tokio-rustls = "0.26.4"
+toml = "1.1.0"
+futures = "0.3.32"
