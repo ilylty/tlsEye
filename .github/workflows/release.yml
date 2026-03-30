@@ -54,7 +54,7 @@ jobs:
 
       - name: Install dependencies (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
-        run: sudo apt-get update && sudo apt-get install -y cmake build-essential
+        run: sudo apt-get update && sudo apt-get install -y cmake build-essential pkg-config libssl-dev libcurl4-openssl-dev libsasl2-dev libzstd-dev zlib1g-dev
 
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
